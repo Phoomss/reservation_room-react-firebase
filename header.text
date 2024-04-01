@@ -1,0 +1,25 @@
+import React from "react";
+
+const Header = (props) => {
+  const user = props.user;
+
+  return (
+    <div>
+      <h1>Header</h1>
+      {user ? (
+        <div>
+          <div>Welcome {user.displayName}</div>
+          <img src={user.photoURL} />
+          <button onClick={props.logout}>Logout</button>
+        </div>
+      ) : (
+        <div>
+          <div>You are not logged in</div>{" "}
+          <button onClick={props.login}>login</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Header;
